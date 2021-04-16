@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>layout06-1</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        #wrap {width: 1200px; margin: 0 auto;}
+        body {background: #fffde7;}
+        #header {width: 100%; height: 100px; background: #e8eaf6;}
+        #banner {width: 100%; height: 200px; background: #c5cae9;}
+        #content1 {overflow: hidden;}
+        #content1 .nav {float: left; width: 30%; height: 300px; background: #9fa8da;}
+        #content1 .article_right1 {float: left; width: 70%; height: 150px; background: #1976d2;}
+        #content1 .article_right2 {float: left; width: 70%; height: 150px; background: #1565c0;}
+        
+        #content2 {overflow: hidden;}
+        #content2 .article_box1 {float: left; width: 33.3333%; height: 150px; background: #5c6bc0;}
+        #content2 .article_box2 {float: left; width: 33.3333%; height: 150px; background: #3f51b5;}
+        #content2 .article_box3 {float: left; width: 33.3333%; height: 150px; background: #3949ab;}
+        
+        #content3 {overflow: hidden; padding: 5%; background: #8c9eff;}
+        #content3 article {float: left; width: 23%;  margin: 1%; border-radius: 10px; height: 130px; background-color: #1a237e;}
+        
+        #footer {width: 100%; height: 100px; background: #3d5afe;}
+        
+        /* 화면 너비 0~1200px */
+        @media (max-width:1220px){
+            #wrap {width: 100%;}
+            #content2 .article_box1 {width: 50%;}
+            #content2 .article_box2 {width: 50%;}
+            #content2 .article_box3 {display: none;}
+            #content3 article {width: 31.3333%;}
+            #content3 article:last-child {display: none;}
+        }
+        /* 화면 너비 0~768px */
+        @media (max-width: 768px){
+            #content2 .article_box1 {width: 100%;}
+            #content2 .article_box2 {width: 100%;}
+        }
+        /* 화면 너비 0~520px */
+        @media (max-width: 520px){
+            #content1 .nav {width: 100%; height: 150px;}
+            #content1 .article_right1 {width: 100%;}
+            #content1 .article_right2 {width: 100%;}
+            #content3 article {width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <section id="banner"></section>
+        <section id="content1">
+            <nav class="nav"></nav>
+            <article class="article_right1"></article>
+            <article class="article_right2"></article>
+        </section>
+        <section id="content2">
+            <article class="article_box1"></article>
+            <article class="article_box2"></article>
+            <article class="article_box3"></article>
+        </section>
+        <section id="content3">
+            <article class="article_square1"></article>
+            <article class="article_square2"></article>
+            <article class="article_square3"></article>
+            <article class="article_square4"></article>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
